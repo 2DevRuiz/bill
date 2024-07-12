@@ -154,7 +154,7 @@
 <!--    <div class="flex  top-16">-->
     <div class="fixed flex flex-col top-20 left-0 h-[calc(100%-8.4%)]  bg-green-100 rounded-r-2xl mb-64">
       <aside
-             class=" fixed inset-y-0 w-32  h-full  mb-24 z-10 flex flex-shrink-0 overflow-hidden bg-gray-700 lg:static transform duration-300 ease-in-out rounded-r-2xl items-center justify-center">
+             class=" fixed inset-y-0 w-32  h-full  mb-24 z-10 flex flex-shrink-0 overflow-hidden bg-gray-600 lg:static transform duration-300 ease-in-out rounded-r-2xl items-center justify-center">
         <!--        main-->
         <div class="flex flex-col flex-shrink-0 h-full px-2 py-4  dark:border-primary-darker">
           <div class="flex flex-col flex-1 space-y-4">
