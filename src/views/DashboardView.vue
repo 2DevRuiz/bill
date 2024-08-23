@@ -1,13 +1,12 @@
 <template>
-    <!-- component -->
-    <!-- This is an example component -->
-    <div>
-        <nav class="bg-white border-b border-gray-200 fixed z-30 w-full">
-            <div class="px-3 py-3 lg:px-5 lg:pl-3">
+    <div class="min-h-screen w-full bg-green-900">
+        <!-- start navbar -->
+        <nav class="bg-green-100 border-b-2 border-green-400 fixed z-50 w-full ">
+            <div class="px-3 py-2.5 lg:px-5 lg:pl-3">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center justify-center">
                         <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
-                            class="lg:hidden mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded">
+                            class="xl:hidden block mr-2 text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded">
                             <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -26,9 +25,13 @@
                                 alt="Windster Logo">
                             <span class="self-center whitespace-nowrap">Sonata Billing</span>
                         </a>
-                        <form action="#" method="GET" class="w-full hidden flex-wrap bg-red-500 md:block lg:pl-32">
+                    </div>
+
+                    <!-- start search bar -->
+                    <div class="flex-1 lg:flex justify-center hidden  lg:pl-32">
+                        <form action="#" method="GET" class="w-full max-w-lg">
                             <label for="topbar-search" class="sr-only">Search</label>
-                            <div class="mt-1 relative lg:w-64">
+                            <div class="mt-0 relative">
                                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                                     <svg class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -43,26 +46,19 @@
                             </div>
                         </form>
                     </div>
+                    <!-- end search bar -->
                     <div class="flex items-center">
-                        <button id="toggleSidebarMobileSearch" type="button"
-                            class="lg:hidden text-gray-500 hover:text-gray-900 hover:bg-gray-100 p-2 rounded-lg">
-                            <span class="sr-only">Search</span>
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </button>
                         <div class="hidden lg:flex items-center">
                             <!-- user menu -->
+                            <UserMenuComponent />
                         </div>
-
                     </div>
+                    <!-- <UserMenuComponent /> -->
                 </div>
             </div>
         </nav>
-        <div class="flex overflow-hidden bg-white pt-16">
+        <!-- end nav bar  -->
+        <div class="flex overflow-hidden">
             <aside id="sidebar"
                 class="fixed hidden z-20 h-full top-0 left-0 pt-16  lg:flex flex-shrink-0 flex-col w-64 transition-width duration-75"
                 aria-label="Sidebar">
@@ -228,10 +224,11 @@
                     </div>
                 </div>
             </aside>
-            <div class="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
-            <div id="main-content" class="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
+        </div>
+        <div class="flex overflow-hidden">
+            <div id="main-content" class="w-full bg-blue-200 relative overflow-y-auto lg:ml-64 mt-14">
                 <main>
-                    <div class="pt-6 px-4">
+                    <div class="pt-8 px-4">
                         <div class="w-full grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4">
                             <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8  2xl:col-span-2">
                                 <div class="flex items-center justify-between mb-4">
@@ -698,7 +695,7 @@
                                                 </td>
                                             </tr>
                                             <tr class="text-gray-500">
-                                                <th
+                                                <th 
                                                     class="border-t-0 align-middle text-sm font-normal whitespace-nowrap p-4 pb-0 text-left">
                                                     Email</th>
                                                 <td
@@ -724,7 +721,8 @@
                     </div>
                 </main>
                 <footer
-                    class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6 xl:p-8 my-6 mx-4">
+                    class="bg-white md:flex md:items-center md:justify-between shadow rounded-lg p-4 md:p-6
+                     xl:p-8 my-6 mx-4">
                     <ul class="flex items-center flex-wrap mb-6 md:mb-0">
                         <li><a href="#" class="text-sm font-normal text-gray-500 hover:underline mr-4 md:mr-6">Terms and
                                 conditions</a></li>
@@ -780,7 +778,9 @@
                 </p>
             </div>
         </div>
-        <!-- <script async defer src="https://buttons.github.io/buttons.js"></script>
-   <script src="https://demo.themesberg.com/windster/app.bundle.js"></script> -->
     </div>
 </template>
+<script lang="ts" setup>
+// import { ref } from 'vue';
+import UserMenuComponent from '@/components/Menus/UserMenuComponent.vue';
+</script>

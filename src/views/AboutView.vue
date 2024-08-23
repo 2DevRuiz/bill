@@ -1,15 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="bg-red-200 h-screen w-full flex justify-center items-center">
+    <!-- <h1>This is an about page</h1> -->
+    <OptComponent :digit-count="6" />
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup lang="ts">
+import OptComponent from '@/components/opt/optComponent.vue';
+
+</script>
